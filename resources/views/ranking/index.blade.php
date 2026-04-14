@@ -20,7 +20,7 @@
                                         <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full {{ $index === 0 ? 'bg-yellow-400 text-white' : ($index === 1 ? 'bg-gray-300 text-white' : ($index === 2 ? 'bg-amber-600 text-white' : 'bg-gray-100 text-gray-600')) }} font-bold text-xl mr-4">
                                             {{ $index + 1 }}
                                         </div>
-                                        
+
                                         <!-- 書籍画像 -->
                                         <div class="flex-shrink-0 w-16 h-20 mr-4">
                                             @if($book->image_url)
@@ -31,7 +31,7 @@
                                                 </div>
                                             @endif
                                         </div>
-                                        
+
                                         <!-- 書籍情報 -->
                                         <div class="flex-grow min-w-0">
                                             <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 truncate">
@@ -54,7 +54,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        
+
                                         <!-- 評価バッジ -->
                                         <div class="flex-shrink-0 ml-4">
                                             <div class="text-center">

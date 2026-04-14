@@ -51,19 +51,18 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                検索
-                            </button>
-                            <a href="{{ route('books.index') }}" class="text-gray-600 hover:text-gray-900">
-                                リセット
-                            </a>
-                            @auth
-                                <a href="{{ route('books.export') }}?{{ http_build_query(request()->query()) }}" 
-                                   class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-auto">
-                                    CSVエクスポート
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    検索
+                                </button>
+                                <a href="{{ route('books.index') }}" class="text-gray-600 hover:text-gray-900">
+                                    リセット
                                 </a>
-                            @endauth
+                            </div>
+                            <a href="{{ route('books.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                書籍を登録
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -120,7 +119,7 @@
                         </div>
 
                         <div class="mt-6">
-                            {{ $books->withQueryString()->links() }}
+                            {{ $books->links() }}
                         </div>
                     @endif
                 </div>
