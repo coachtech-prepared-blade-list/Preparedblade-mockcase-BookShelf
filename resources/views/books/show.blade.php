@@ -50,7 +50,7 @@
                                         </form>
                                     @endif
                                 @else
-                                    <a href="/login" class="text-gray-400 hover:text-red-500" title="お気に入りに追加">
+                                    <a href="{{ route('login') }}" class="text-gray-400 hover:text-red-500" title="お気に入りに追加するにはログインしてください">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                                         </svg>
@@ -180,7 +180,7 @@
                                                     </form>
                                                 @endif
                                             @else
-                                                <a href="/login" class="text-gray-500 hover:text-blue-500 text-sm flex items-center">
+                                                <a href="{{ route('login') }}" class="text-gray-500 hover:text-blue-500 text-sm flex items-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 20 20">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
                                                     </svg>
@@ -190,9 +190,9 @@
 
                                             <!-- 編集・削除ボタン -->
                                             @can('update', $review)
-                                                <div class="flex gap-2">
+                                                <div class="flex items-center gap-2">
                                                     <a href="{{ route('reviews.edit', $review) }}" class="text-sm text-gray-500 hover:text-gray-700">編集</a>
-                                                    <form action="{{ route('reviews.destroy', $review) }}" method="POST" class="inline" onsubmit="return confirm('本当に削除しますか？')">
+                                                    <form action="{{ route('reviews.destroy', $review) }}" method="POST" onsubmit="return confirm('本当に削除しますか？')">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="text-sm text-red-500 hover:text-red-700">削除</button>
