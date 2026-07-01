@@ -18,6 +18,8 @@
 ### basic → advanced での主な変更点
 
 - **追加**: `resources/views/reports/index.blade.php`（マイ読書レポート画面）
+- **追加**: `resources/views/notifications/index.blade.php`（通知一覧画面）
+- **追加**: `resources/views/reading-plans/`（読書計画の一覧・作成・編集画面）
 - **変更**: `resources/views/books/index.blade.php`（キーワード検索・ジャンルフィルタ・ソート追加）
 - **変更**: `resources/views/books/create.blade.php`（ISBN検索フォーム追加）
 
@@ -123,8 +125,7 @@ resources/
     │   ├── primary-button.blade.php
     │   ├── responsive-nav-link.blade.php
     │   ├── secondary-button.blade.php
-    │   ├── text-input.blade.php
-    │   └── validation-errors.blade.php
+    │   └── text-input.blade.php
     ├── favorites/
     │   └── index.blade.php
     ├── genres/
@@ -134,7 +135,13 @@ resources/
     │   └── show.blade.php
     ├── layouts/
     │   └── navigation.blade.php
+    ├── notifications/            ← advanced ブランチのみ
+    │   └── index.blade.php
     ├── ranking/
+    │   └── index.blade.php
+    ├── reading-plans/            ← advanced ブランチのみ
+    │   ├── create.blade.php
+    │   ├── edit.blade.php
     │   └── index.blade.php
     ├── reports/                  ← advanced ブランチのみ
     │   └── index.blade.php
